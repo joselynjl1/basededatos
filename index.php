@@ -22,6 +22,7 @@
           <th>Telefono Fijo</th>
           <th>Telefono Movil</th>
           <th>Correo Electronico</th>
+          <th>Distrito</th>
           
         </tr>
       </thead>
@@ -30,7 +31,9 @@
 
         $conexion = mysqli_connect(getenv('MYSQL_HOST'), getenv('MYSQL_USER'), getenv('MYSQL_PASSWORD'), "BASEDATOS");
 
-        $cadenaSQL = "select * from agenda";
+$cadenaSQL = "SELECT agenda.nombre, agenda.apellido, agenda.direccion, agenda.telefijo, agenda.telefmovi, agenda.email, distrito.nombred
+FROM agenda
+INNER JOIN distrito ON agenda.codigodis = distrito.codigodis";
         $resultado = mysqli_query($conexion, $cadenaSQL);
 
         while ($fila = mysqli_fetch_object($resultado)) {
