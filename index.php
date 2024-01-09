@@ -43,6 +43,7 @@ INNER JOIN distrito ON agenda.codigodis = distrito.codigodis";
          "</td><td>" . $fila->telefijo .
          "</td><td>" . $fila->telefmovi .
          "</td><td>" . $fila->email .
+          "</td><td>" . $fila->nombred .
          "</td></tr>";
        }
        ?>
